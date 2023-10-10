@@ -9,7 +9,7 @@ OBJ = $(SOURCES:%.cc=$(BUILD_DIR)/%.o)
 all: $(BUILD_DIR) $(DEP_DIR) fc-sui
 
 fc-sui: $(BUILD_DIR)/fc-sui.o $(OBJ)
-	$(CXX) $^ -lpthread -o $@
+	$(CXX) $^ -lpthread -o $@ -lpsapi
 
 -include $(wildcard $(DEP_DIR)/*.d)
 
