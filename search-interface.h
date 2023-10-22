@@ -17,6 +17,8 @@ public:
 
     friend std::ostream& operator<< (std::ostream& os, const SearchAction & action) ;
 
+	friend bool operator==(const SearchAction& a, const SearchAction& b);
+
     const Location& from() const;
     const Location& to() const;
 private:

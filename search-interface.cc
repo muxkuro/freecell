@@ -13,6 +13,14 @@ bool operator<(const SearchState &a, const SearchState &b) {
     return a.state_ < b.state_;
 }
 
+bool operator==(const SearchState& a, const SearchState& b) {
+	return a.state_ == b.state_;
+}
+
+bool operator==(const SearchAction& a, const SearchAction& b) {
+	return a.from() == b.from() && a.to() == b.to();
+}
+
 SearchState SearchAction::execute(const SearchState& state) const {
 	SearchState new_state(state);
 	bool succeeded = new_state.execute(*this);
@@ -95,3 +103,5 @@ std::ostream& operator<< (std::ostream& os, const SearchAction & action) {
 	os << action.from_ << " " << action.to_;
 	return os;
 }
+
+
